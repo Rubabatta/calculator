@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
+
+<title>Calculator</title>
+<style>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e970cf; /* dark background */
+}
+
+/* Container */
+.container {
+    width: 360px;
+    padding: 30px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #1e003e, #3b0066);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Display */
+.display {
+    height: 70px;
+    background: #1b1b2f;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    font-size: 2.3em;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Keys grid */
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Buttons default */
+.keys button {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(145deg, #3a0ca3, #5f0f40);
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.keys button:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(145deg, #5f0f40, #7a0fd6);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+}
+
+/* Operators / Special buttons */
+.ac button, .plus button, .minus button, .multiply button, .divide button, .percent button, .plus-minus button {
+    background: linear-gradient(145deg, #720026, #ff2e63);
+}
+
+.ac button:hover, .plus button:hover, .minus button:hover, .multiply button:hover, .divide button:hover, .percent button:hover, .plus-minus button:hover {
+    background: linear-gradient(145deg, #ff2e63, #ff4b7c);
+}
+
+/* Equal button rectangular + 2-column span */
+.equal {
+    grid-column: span 2;
+}
+
+.equal button {
+    border-radius: 20px;
+    width: 100%;
+    background: linear-gradient(145deg, #4b0082, #7a0fd6);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.equal button:hover {
+    background: linear-gradient(145deg, #7a0fd6, #9b3fff);
+    transform: translateY(-3px);
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="display">0</div>
+    <div class="keys">
+        <!-- Row 1 -->
+        <div class="ac"><button>AC</button></div>
+        <div class="plus-minus"><button>+/-</button></div>
+        <div class="percent"><button>%</button></div>
+        <div class="divide"><button>/</button></div>
+
+        <!-- Row 2 -->
+        <div class="seven"><button>7</button></div>
+        <div class="eight"><button>8</button></div>
+        <div class="nine"><button>9</button></div>
+        <div class="multiply"><button>X</button></div>
+
+        <!-- Row 3 -->
+        <div class="four"><button>4</button></div>
+        <div class="five"><button>5</button></div>
+        <div class="six"><button>6</button></div>
+        <div class="minus"><button>-</button></div>
+
+        <!-- Row 4 -->
+        <div class="one"><button>1</button></div>
+        <div class="two"><button>2</button></div>
+        <div class="three"><button>3</button></div>
+        <div class="plus"><button>+</button></div>
+
+        <!-- Row 5 -->
+        <div class="zero"><button>0</button></div>
+        <div class="dot"><button>.</button></div>
+        <div class="equal"><button>=</button></div>
+    </div>
+</div>
+<script src="js.js"></script>
+</body>
+</html>
